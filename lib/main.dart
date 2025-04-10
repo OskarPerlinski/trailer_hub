@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trailer_hub/core/di/di.dart';
 import 'package:trailer_hub/presentation/router/app_router.dart';
+import 'package:trailer_hub/presentation/theme/app_theme.dart';
 
 void main() async {
   await setupDependencies();
@@ -16,9 +17,7 @@ class MyApp extends StatelessWidget {
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.getTheme(),
     );
   }
 }
