@@ -14,7 +14,7 @@ class AppColors {
   static ColorScheme get colorScheme => ColorScheme(
     brightness: Brightness.light,
     primary: AppColors.primary,
-    onPrimary: AppColors.black,
+    onPrimary: AppColors.white,
     secondary: AppColors.secondary,
     onSecondary: AppColors.black,
     error: AppColors.error,
