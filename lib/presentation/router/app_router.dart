@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trailer_hub/presentation/router/routes/app_rputes.dart';
+import 'package:trailer_hub/presentation/screens/auth/sign_in/sign_in.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_up/sign_up.dart';
 
 part 'app_router.g.dart';
@@ -17,5 +18,13 @@ class SignUpRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const SignUpPage();
+  }
+}
+
+@TypedGoRoute<SignInRoute>(path: AppRoutes.signIn)
+class SignInRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const SignInPage();
   }
 }
