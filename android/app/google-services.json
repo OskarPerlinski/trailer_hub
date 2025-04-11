@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1013045690368",
+    "project_id": "trailerhub-42077",
+    "storage_bucket": "trailerhub-42077.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013045690368:android:eff07884bec05ad74ed8e5",
+        "android_client_info": {
+          "package_name": "com.example.trailer_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiMafAFrOEqERXBBm18paC8Z1CUYjDpzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
