@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trailer_hub/presentation/router/app_router.dart';
 import 'package:trailer_hub/presentation/theme/app_colors.dart';
 import 'package:trailer_hub/presentation/theme/app_typography.dart';
 
@@ -10,7 +11,7 @@ class ForgotPasswordButton extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => ResetPasswordRoute().push(context),
         child: Text(
           'Forgot Password?',
           style: AppTypography.h5.copyWith(
