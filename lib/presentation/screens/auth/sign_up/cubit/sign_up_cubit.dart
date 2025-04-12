@@ -7,7 +7,7 @@ import 'package:trailer_hub/presentation/screens/auth/sign_up/cubit/sign_up_stat
 
 @injectable
 class SignUpCubit extends ActionCubit<SignUpState, SignUpAction> {
-  SignUpCubit(this.authRepository) : super(SignUpState.initial());
+  SignUpCubit(this.authRepository) : super(const SignUpState.initial());
 
   final AuthRepository authRepository;
 
@@ -18,6 +18,11 @@ class SignUpCubit extends ActionCubit<SignUpState, SignUpAction> {
   ) async {
     if (password != confirmPassword) {
       emit(SignUpInitial(errorMessage: 'Passwords do not match'));
+      return;
+    }
+
+    if (email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
+      emit(SignUpInitial(errorMessage: 'Please fill in all fields.'));
       return;
     }
 

@@ -13,6 +13,7 @@ class SignInPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final passwordController = useTextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -29,7 +30,10 @@ class SignInPage extends HookWidget {
                 AppSpacings.xLarge(),
                 TextFormField(decoration: InputDecoration(hintText: 'Email')),
                 AppSpacings.medium(),
-                PasswordField(hintText: 'Password'),
+                PasswordField(
+                  hintText: 'Password',
+                  controller: passwordController,
+                ),
                 AppSpacings.small(),
                 ForgotPasswordButton(),
                 AppSpacings.xLarge(),

@@ -6,6 +6,6 @@ part 'sign_up_action.freezed.dart';
 class SignUpAction with _$SignUpAction{
   const factory SignUpAction.success() = SignUpSuccess;
   const factory SignUpAction.showLoading() = SignUpShowLoading;
-  const factory SignUpAction.hideLoading() = SignHideLoading;
+  const factory SignUpAction.hideLoading() = SignUpHideLoading;
   const factory SignUpAction.showErrorMessage(String message) = SignUpShowErrorMessage;
 }
