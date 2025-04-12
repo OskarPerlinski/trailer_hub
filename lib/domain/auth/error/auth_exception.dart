@@ -13,10 +13,8 @@ class AuthException implements Exception {
         return AuthException(message: 'The password is too weak.');
       case 'email-already-in-use':
         return AuthException(message: 'This email is already in use.');
-      case 'user-not-found':
-        return AuthException(message: 'No user found with this email.');
-      case 'wrong-password':
-        return AuthException(message: 'Incorrect password.');
+      case 'invalid-credential':
+        return AuthException(message: 'Wrong password or email.');
       default:
         return AuthException(message: 'An error occurred: ${e.message}');
     }
