@@ -16,4 +16,15 @@ class EmailDataSource {
       throw AuthException.fromFirebase(e);
     }
   }
+
+  Future<UserCredential> signInWithEmail(String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      throw AuthException.fromFirebase(e);
+    }
+  }
 }
