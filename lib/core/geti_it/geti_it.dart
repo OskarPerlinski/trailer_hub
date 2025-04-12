@@ -1,3 +1,3 @@
 import 'package:get_it/get_it.dart';
 
-final getiT = GetIt.instance;
+final getIt = GetIt.instance;

@@ -6,6 +6,7 @@ class PasswordField extends HookWidget {
     required this.hintText,
     this.obscureText = true,
     this.hasError = false,
+    required this.controller,
     super.key,
   });
 
@@ -13,12 +14,14 @@ class PasswordField extends HookWidget {
 
   final bool hasError;
   final bool obscureText;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     final isObscure = useState(obscureText);
 
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
         error: hasError ? SizedBox.shrink() : null,
