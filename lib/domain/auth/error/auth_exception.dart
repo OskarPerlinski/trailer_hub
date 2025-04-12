@@ -17,6 +17,8 @@ class AuthException implements Exception {
         return AuthException(message: 'No user found with this email.');
       case 'wrong-password':
         return AuthException(message: 'Incorrect password.');
+        case 'invalid-credential':
+      return AuthException(message: 'Invalid credentials. Please check your email and password.');
       default:
         return AuthException(message: 'An error occurred: ${e.message}');
     }
