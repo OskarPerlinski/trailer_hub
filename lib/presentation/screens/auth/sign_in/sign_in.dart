@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
+import 'package:trailer_hub/presentation/assets/ap_assets.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_action.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_cubit.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_state.dart';
+import 'package:trailer_hub/presentation/screens/auth/widget/other_options_to_login.dart';
 import 'package:trailer_hub/presentation/screens/auth/widget/create_account_button.dart';
 import 'package:trailer_hub/presentation/screens/auth/widget/forgot_password_button.dart';
 import 'package:trailer_hub/presentation/screens/auth/widget/header_auth.dart';
 import 'package:trailer_hub/presentation/screens/auth/widget/password_field.dart';
+import 'package:trailer_hub/presentation/screens/auth/widget/socials_button.dart';
 import 'package:trailer_hub/presentation/theme/app_colors.dart';
 import 'package:trailer_hub/presentation/theme/app_dimens.dart';
 import 'package:trailer_hub/presentation/theme/app_spacings.dart';
@@ -111,6 +114,14 @@ class SignInPage extends HookWidget {
                     ),
                     AppSpacings.medium(),
                     CreateAccountButton(),
+                    AppSpacings.xLarge(),
+                    OtherOptionsToLogin(),
+                    AppSpacings.xLarge(),
+                    SocialsButton(
+                      text: 'Sign in with Google',
+                      assetName: AppAssets.googleIcon,
+                      onPressed: () {},
+                    ),
                     AppSpacings.small(),
                   ],
                 ),
