@@ -120,7 +120,7 @@ class SignInPage extends HookWidget {
                     SocialsButton(
                       text: 'Sign in with Google',
                       assetName: AppAssets.googleIcon,
-                      onPressed: () {},
+                      onPressed: cubit.loginWithGoogle,
                     ),
                     AppSpacings.small(),
                   ],
