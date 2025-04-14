@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
-import 'package:trailer_hub/presentation/assets/ap_assets.dart';
+import 'package:trailer_hub/presentation/assets/app_assets.dart';
+import 'package:trailer_hub/presentation/router/routes/app_rputes.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_action.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_cubit.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/cubit/sign_in_state.dart';
@@ -28,7 +30,7 @@ class SignInPage extends HookWidget {
     useActionListener<SignInAction>(cubit, (action) {
       switch (action) {
         case SignInSuccess():
-          //context.go(AppRoutes.home);
+          context.go(AppRoutes.homePage);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
