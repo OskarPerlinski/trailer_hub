@@ -27,6 +27,9 @@ dependencies:
   cloud_firestore: ^5.6.6
   flutter_svg: ^2.0.17
   google_sign_in: ^6.3.0
+  dio: ^5.8.0+1
+  logger: ^2.5.0
+  flutter_secure_storage: ^4.2.1
 
 dev_dependencies:
   flutter_test:
