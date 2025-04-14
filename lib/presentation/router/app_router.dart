@@ -4,6 +4,7 @@ import 'package:trailer_hub/presentation/router/routes/app_rputes.dart';
 import 'package:trailer_hub/presentation/screens/auth/reset_password/reset_password.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_in/sign_in.dart';
 import 'package:trailer_hub/presentation/screens/auth/sign_up/sign_up.dart';
+import 'package:trailer_hub/presentation/screens/home/home_page.dart';
 
 part 'app_router.g.dart';
 
@@ -38,3 +39,10 @@ class ResetPasswordRoute extends GoRouteData {
   }
 }
 
+@TypedGoRoute<HomePageRoute>(path: AppRoutes.homePage)
+class HomePageRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const HomePage();
+  }
+}
