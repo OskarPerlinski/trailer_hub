@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:trailer_hub/core/constants/api_urls.dart';
 
 import 'interceptors.dart';
 
+@singleton
 class DioClient {
   
   late final Dio _dio;
