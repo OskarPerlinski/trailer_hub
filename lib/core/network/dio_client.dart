@@ -1,86 +1,84 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:trailer_hub/core/constants/api_urls.dart';
-
 import 'interceptors.dart';
 
 @singleton
 class DioClient {
-  
   late final Dio _dio;
-  DioClient(): _dio = Dio(
-    BaseOptions(
-      baseUrl: ApiUrls.baseUrl,
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8'
-      },
-      responseType: ResponseType.json,
-      sendTimeout: const Duration(seconds: 10),
-      receiveTimeout: const Duration(seconds: 10)
-    ),
-  )..interceptors.addAll([AuthorizationInterceptor(),LoggerInterceptor()]);
 
-  // GET METHOD
-  Future < Response > get(
+  DioClient()
+      : _dio = Dio(
+          BaseOptions(
+            baseUrl: ApiUrls.baseUrl,
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            responseType: ResponseType.json,
+            sendTimeout: const Duration(seconds: 10),
+            receiveTimeout: const Duration(seconds: 10),
+          ),
+        ) {
+    _dio.interceptors.addAll([
+      ApiKeyInterceptor(),
+      LoggerInterceptor(),
+    ]);
+  }
+
+  // GET
+  Future<Response> get(
     String url, {
-      Map < String,
-      dynamic > ? queryParameters,
-      Options ? options,
-      CancelToken ? cancelToken,
-      ProgressCallback ? onReceiveProgress,
-    }) async {
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     try {
-      final Response response = await _dio.get(
+      return await _dio.get(
         url,
         queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
-      return response;
-    }
-    on DioException {
+    } on DioException {
       rethrow;
     }
   }
 
-  // POST METHOD
-  Future < Response > post(
+  // POST
+  Future<Response> post(
     String url, {
-      data,
-      Map < String,
-      dynamic > ? queryParameters,
-      Options ? options,
-      ProgressCallback ? onSendProgress,
-      ProgressCallback ? onReceiveProgress,
-    }) async {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     try {
-      final Response response = await _dio.post(
+      return await _dio.post(
         url,
         data: data,
+        queryParameters: queryParameters,
         options: options,
         onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      return response;
     } catch (e) {
       rethrow;
     }
   }
 
-  // PUT METHOD
-  Future < Response > put(
+  // PUT
+  Future<Response> put(
     String url, {
-      dynamic data,
-      Map < String,
-      dynamic > ? queryParameters,
-      Options ? options,
-      CancelToken ? cancelToken,
-      ProgressCallback ? onSendProgress,
-      ProgressCallback ? onReceiveProgress,
-    }) async {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     try {
-      final Response response = await _dio.put(
+      return await _dio.put(
         url,
         data: data,
         queryParameters: queryParameters,
@@ -89,23 +87,21 @@ class DioClient {
         onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      return response;
     } catch (e) {
       rethrow;
     }
   }
 
-  // DELETE METHOD
-  Future < dynamic > delete(
+  // DELETE
+  Future<dynamic> delete(
     String url, {
-      data,
-      Map < String,
-      dynamic > ? queryParameters,
-      Options ? options,
-      CancelToken ? cancelToken,
-    }) async {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async {
     try {
-      final Response response = await _dio.delete(
+      final response = await _dio.delete(
         url,
         data: data,
         queryParameters: queryParameters,
