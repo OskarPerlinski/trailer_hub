@@ -7,22 +7,22 @@ part 'movie_model_dto.g.dart';
 abstract class MovieModelDto with _$MovieModelDto {
   const factory MovieModelDto({
     String? backdropPath,
-    int? id,
-    String? title,
-    String? originalTitle,
-    String? overview,
-    String? posterPath,
+    required int id,
+    required String title,
+    required String originalTitle,
+    required String overview,
+    required String posterPath,
     String? mediaType,
-    bool? adult,
-    String? originalLanguage,
+    required bool adult,
+    required String originalLanguage,
     @Default([]) List<int> genreIds,
-    double? popularity,
-    DateTime? releaseDate,
-    bool? video,
-    double? voteAverage,
-    int? voteCount,
+    required double popularity,
+    required DateTime releaseDate,
+    required bool video,
+    required double voteAverage,
+    required int voteCount,
   }) = _MovieModelDto;
 
-  factory MovieModelDto.fromJson(Map<String, dynamic> json) => 
+  factory MovieModelDto.fromJson(Map<String, dynamic> json) =>
       _$MovieModelDtoFromJson(json);
 }
