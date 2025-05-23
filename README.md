@@ -44,5 +44,4 @@ Data Modeling: Freezed, DTOs, Mapper
 1️⃣ 🏠 User opens the app and lands on the homepage with categorized movie lists
 2️⃣ 🔍 Browses through Popular, Top Rated, Now Playing, or Upcoming movies
 3️⃣ 🎞 Taps on a movie to see detailed info, watch its trailer, and read the description
-4️⃣ 🤖 Views similar recommended movies below
 5️⃣ 🔐 Can register, log in, or use Google Sign-In
