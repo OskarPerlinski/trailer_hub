@@ -1,16 +1,48 @@
-# trailer_hub
+🎬 TrailerHub
+Your ultimate movie discovery app!
 
-A new Flutter project.
+📌 App Overview
+TrailerHub is a modern mobile app built with Flutter, allowing users to explore the latest, most popular, and top-rated movies. Powered by TheMovieDB API, it provides detailed movie information, trailers, and smart recommendations.
 
-## Getting Started
+✨ Key Features
+🎞 Browse Movies
 
-This project is a starting point for a Flutter application.
+🔥 Popular
 
-A few resources to get you started if this is your first Flutter project:
+🏆 Top Rated
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🎬 Now Playing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📅 Upcoming
+
+📽 Movie Details
+
+▶️ Watch trailer
+
+📝 Description and rating
+
+🔐 Authentication
+
+🧑‍💼 Sign up and log in (Firebase Auth)
+
+🔐 Google Sign-In
+
+🛠 Technologies
+Frontend: Flutter
+
+Backend/API: TheMovieDB API
+
+Authentication: Firebase Auth
+
+State Management: Bloc + Hooked Bloc
+
+Dependency Injection: Injectable
+
+Data Modeling: Freezed, DTOs, Mapper
+
+🔄 How It Works
+1️⃣ 🏠 User opens the app and lands on the homepage with categorized movie lists
+2️⃣ 🔍 Browses through Popular, Top Rated, Now Playing, or Upcoming movies
+3️⃣ 🎞 Taps on a movie to see detailed info, watch its trailer, and read the description
+4️⃣ 🤖 Views similar recommended movies below
+5️⃣ 🔐 Can register, log in, or use Google Sign-In
